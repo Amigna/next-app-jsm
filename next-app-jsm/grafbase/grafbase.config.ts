@@ -12,7 +12,7 @@ import { g, auth, config } from '@grafbase/sdk'
 // Define Data Models
 // https://grafbase.com/docs/database
 
-//@ts-ignore
+// @ts-ignore
 const User = g.model('User', {
   name: g.string().length({min: 2, max: 20}),
   email: g.string().unique(),
@@ -25,7 +25,7 @@ const User = g.model('User', {
   rules.public().read()
 })
 
-//@ts-ignore
+// @ts-ignore
 const Project = g.model('Project', {
   title: g.string().length({min: 3}),
   description: g.string(),
@@ -48,8 +48,7 @@ export default config({
   schema: g,
   auth: {
     providers: [jwt],
-    rules: (rules) => {
+    rules: (rules) => 
       rules.private()
-    }
   }
 })
