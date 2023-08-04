@@ -35,9 +35,6 @@ const Navbar = async () => {
                <Link href="/create-project">
                   Share Work
                </Link>
-               <button type="button" className="text-sm" onClick={() => signOut()}>
-                  Sign out
-               </button>
             </>
          ) : (
             <AuthProviders />
